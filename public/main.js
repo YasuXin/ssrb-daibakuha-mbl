@@ -12,14 +12,14 @@ let engine = Engine.create();
 
 /* 定数と変数の定義 */
 // 定数
-const width = window.innerWidth;
-const height = window.innerHeight - 100;
+const width = screen.width;
+const height = screen.height - 180;
 const lineWidth = 20;
 //const fieldCount = 3;
 const ballCount = 50;
-const ballRad = window.innerWidth / 12;
-const skeltonRad = window.innerWidth / 14;
-const goldenRad = window.innerWidth / 8;
+const ballRad = screen.width / 12;
+const skeltonRad = screen.width / 14;
+const goldenRad = screen.width / 8;
 const explosionTime = 400
 const explosionCount = 2;
 const goldenExplosionCount = 3;
@@ -500,7 +500,7 @@ const stopGame = () => {
   const ssrbtnElement = document.createElement("img")
   const randSsrbtn = Math.floor(Math.random() * 13);
   ssrbtnElement.src = basicImagePath + "ssrbtn" + randSsrbtn + ".png";
-  ssrbtnElement.width = 140;
+  ssrbtnElement.width = 130;
   if (resultSsrbtnElement.children.length > 0) {
     resultSsrbtnElement.removeChild(resultSsrbtnElement.children[0]);
   }
