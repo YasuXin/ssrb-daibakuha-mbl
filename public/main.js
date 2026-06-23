@@ -466,6 +466,9 @@ const hideHowToPlay = () => {
 
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
+  setTimeout(() => {
+    htpWrapperElement.classList.add('hidden');
+  }, 500);
 }
 
 //ゲームを停止する　本番では削除する
