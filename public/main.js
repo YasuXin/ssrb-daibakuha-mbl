@@ -13,7 +13,7 @@ let engine = Engine.create();
 /* 定数と変数の定義 */
 // 定数
 const width = screen.width;
-const height = window.innerHeight - 100;
+const height = window.innerHeight - 110;
 const lineWidth = 20;
 //const fieldCount = 3;
 const ballCount = 50;
@@ -95,6 +95,9 @@ let music_on = false
 const handleScroll = (event) => {
   event.preventDefault();
 }
+
+document.addEventListener('touchmove', handleScroll, { passive: false });
+document.addEventListener('wheel', handleScroll, { passive: false });
 
 const switchOnMusic = () => {
   document.getElementById('musicOffButton').classList.add('hidden');
@@ -453,21 +456,23 @@ const reloadGame = () => {
 reloadButtonElement.addEventListener("touchstart", reloadGame);
 
 const displayHowToPlay = () => {
+  document.removeEventListener('touchmove', handleScroll, { passive: false });
+  document.removeEventListener('wheel', handleScroll, { passive: false });
   htpWrapperElement.classList.add('visibleHtp');
   htpWrapperElement.classList.remove('htpHidden');
   htpWrapperElement.classList.remove('hiddenHtp');
 }
 
 const hideHowToPlay = () => {
+  scrollTo(0, 0)
+  document.addEventListener('touchmove', handleScroll, { passive: false });
+  document.addEventListener('wheel', handleScroll, { passive: false });
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
 }
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
-
-  document.removeEventListener('touchmove', handleScroll, { passive: false });
-  document.removeEventListener('wheel', handleScroll, { passive: false });
 
   // ターゲットカーソルを削除する
   while (true) {

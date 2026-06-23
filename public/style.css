@@ -147,7 +147,7 @@ main {
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  height:  calc(var(--canvas-height) + 10px);
+  height:  var(--canvas-height);
   border-radius: 10px;
   background-color: rgba(250,255,255,0.9);
   padding: 0;
