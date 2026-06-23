@@ -500,7 +500,7 @@ const stopGame = () => {
   const ssrbtnElement = document.createElement("img")
   const randSsrbtn = Math.floor(Math.random() * 13);
   ssrbtnElement.src = basicImagePath + "ssrbtn" + randSsrbtn + ".png";
-  ssrbtnElement.width = 130;
+  ssrbtnElement.width = 12;
   if (resultSsrbtnElement.children.length > 0) {
     resultSsrbtnElement.removeChild(resultSsrbtnElement.children[0]);
   }
