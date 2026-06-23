@@ -90,14 +90,11 @@ let bestScore = 0;
 let currentPage = 1;
 const numberOfPages = 10;
 
+let music_on = false
+
 const handleScroll = (event) => {
   event.preventDefault();
 }
-
-document.addEventListener('touchmove', handleScroll, { passive: false });
-document.addEventListener('wheel', handleScroll, { passive: false });
-
-let music_on = false
 
 const switchOnMusic = () => {
   document.getElementById('musicOffButton').classList.add('hidden');
@@ -370,6 +367,9 @@ const startGame = () => {
     document.querySelector('.bgm').remove();
   }
 
+  document.addEventListener('touchmove', handleScroll, { passive: false });
+  document.addEventListener('wheel', handleScroll, { passive: false });
+
   playMusic(countDownPath);
   countDownElement.classList.remove('hidden');
   countDownElement.classList.add('visibleCountDown');
@@ -465,6 +465,9 @@ const hideHowToPlay = () => {
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
+
+  document.removeEventListener('touchmove', handleScroll, { passive: false });
+  document.removeEventListener('wheel', handleScroll, { passive: false });
 
   // ターゲットカーソルを削除する
   while (true) {
