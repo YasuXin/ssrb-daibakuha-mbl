@@ -90,7 +90,12 @@ let bestScore = 0;
 let currentPage = 1;
 const numberOfPages = 10;
 
-const htpList = htpWrapperElement.querySelectorAll('.htpContainer')
+const handleScroll = (event) => {
+  event.preventDefault();
+}
+
+document.addEventListener('touchmove', handleScroll, { passive: false });
+document.addEventListener('wheel', handleScroll, { passive: false });
 
 let music_on = false
 
@@ -106,8 +111,7 @@ const switchOffMusic = () => {
   music_on = false;
 }
 
-document.getElementById('musicOffButton').classList.add('hidden');
-document.getElementById('musicOnButton').classList.remove('hidden');
+const htpList = htpWrapperElement.querySelectorAll('.htpContainer')
 
 const showHtpNextContent = () => {
 

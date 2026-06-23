@@ -120,6 +120,14 @@ main {
   color: #ccc;
 }
 
+.music-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(220,120,120);
+  border: 2px solid rgb(240,180,180);
+}
+
 /* result container */
 #resultContainer {
   position: absolute;
