@@ -456,17 +456,14 @@ const reloadGame = () => {
 reloadButtonElement.addEventListener("touchstart", reloadGame);
 
 const displayHowToPlay = () => {
-  document.removeEventListener('touchmove', handleScroll, { passive: false });
-  document.removeEventListener('wheel', handleScroll, { passive: false });
+ 
   htpWrapperElement.classList.add('visibleHtp');
   htpWrapperElement.classList.remove('htpHidden');
   htpWrapperElement.classList.remove('hiddenHtp');
 }
 
 const hideHowToPlay = () => {
-  scrollTo(0, 0)
-  document.addEventListener('touchmove', handleScroll, { passive: false });
-  document.addEventListener('wheel', handleScroll, { passive: false });
+
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
 }
