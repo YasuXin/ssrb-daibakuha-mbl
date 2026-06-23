@@ -13,7 +13,7 @@ let engine = Engine.create();
 /* 定数と変数の定義 */
 // 定数
 const width = window.innerWidth;
-const height = window.innerHeight - 110;
+const height = window.innerHeight - 180;
 const lineWidth = 20;
 //const fieldCount = 3;
 const ballCount = 50;
@@ -90,14 +90,24 @@ let bestScore = 0;
 let currentPage = 1;
 const numberOfPages = 10;
 
-const handleScroll = (event) => {
-  event.preventDefault();
+const htpList = htpWrapperElement.querySelectorAll('.htpContainer')
+
+let music_on = false
+
+const switchOnMusic = () => {
+  document.getElementById('musicOffButton').classList.add('hidden');
+  document.getElementById('musicOnButton').classList.remove('hidden');
+  music_on = true;
 }
 
-document.addEventListener('touchmove', handleScroll, { passive: false });
-document.addEventListener('wheel', handleScroll, { passive: false });
+const switchOffMusic = () => {
+  document.getElementById('musicOnButton').classList.add('hidden');
+  document.getElementById('musicOffButton').classList.remove('hidden');
+  music_on = false;
+}
 
-const htpList = htpWrapperElement.querySelectorAll('.htpContainer')
+document.getElementById('musicOffButton').classList.add('hidden');
+document.getElementById('musicOnButton').classList.remove('hidden');
 
 const showHtpNextContent = () => {
 
@@ -207,6 +217,7 @@ const createTarget = (x, y) => {
 }
 
 const playMusic = (path) => {
+  if (!music_on) return
   const se = document.getElementById(path).cloneNode(true)
   document.body.appendChild(se);
 
@@ -219,6 +230,7 @@ const playMusic = (path) => {
 }
 
 const playBgm = (path) => {
+  if (!music_on) return
   const se = document.getElementById(path).cloneNode(true)
   se.classList.add('bgm');
   document.body.appendChild(se);
