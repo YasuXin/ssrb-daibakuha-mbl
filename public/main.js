@@ -23,7 +23,7 @@ const goldenRad = screen.width / 8;
 const explosionTime = 400
 const explosionCount = 2;
 const goldenExplosionCount = 3;
-const timer = 12;
+const timer = 120;
 
 // Paths
 const basicImagePath = "images/";
