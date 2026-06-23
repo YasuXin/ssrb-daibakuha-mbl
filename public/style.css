@@ -393,7 +393,7 @@ main {
   position: absolute;
   top: 0;
   width: 100vw;
-  height: var(--main-container-height);
+  height: auto;
 }
 
 .htpHidden {
