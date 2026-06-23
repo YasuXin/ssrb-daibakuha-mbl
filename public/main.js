@@ -23,7 +23,7 @@ const goldenRad = screen.width / 8;
 const explosionTime = 400
 const explosionCount = 2;
 const goldenExplosionCount = 3;
-const timer = 120;
+const timer = 12;
 
 // Paths
 const basicImagePath = "images/";
@@ -500,7 +500,7 @@ const stopGame = () => {
   const ssrbtnElement = document.createElement("img")
   const randSsrbtn = Math.floor(Math.random() * 13);
   ssrbtnElement.src = basicImagePath + "ssrbtn" + randSsrbtn + ".png";
-  ssrbtnElement.width = 12;
+  ssrbtnElement.width = 120;
   if (resultSsrbtnElement.children.length > 0) {
     resultSsrbtnElement.removeChild(resultSsrbtnElement.children[0]);
   }
