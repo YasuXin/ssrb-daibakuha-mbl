@@ -2,7 +2,7 @@
   --main-container-width: 100vw;
   --main-container-height: 100vh;
   --canvas-width: 100vw;
-  --canvas-height: calc(100vh - 160px);
+  --canvas-height: calc(100vh - 200px);
   --container-top: 50px;
   --container-left: 0;
   --score-container-left: 0;
