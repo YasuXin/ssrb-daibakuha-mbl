@@ -13,7 +13,7 @@ let engine = Engine.create();
 /* 定数と変数の定義 */
 // 定数
 const width = window.innerWidth;
-const height = window.innerHeight - 110;
+const height = window.innerHeight - 100;
 const lineWidth = 20;
 //const fieldCount = 3;
 const ballCount = 50;
