@@ -126,6 +126,7 @@ main {
   border-radius: 20px;
   background-color: rgb(220,120,120);
   border: 2px solid rgb(240,180,180);
+  padding: 2px 0;
 }
 
 /* result container */
