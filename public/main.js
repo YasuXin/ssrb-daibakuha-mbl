@@ -481,7 +481,7 @@ const stopGame = () => {
 
   document.exitFullscreen().catch((err) => {
     console.error(`全画面表示の終了に失敗しました: ${err.message}`);
-  }
+  })
 
   // ターゲットカーソルを削除する
   while (true) {
