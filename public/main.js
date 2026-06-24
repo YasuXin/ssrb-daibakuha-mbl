@@ -466,18 +466,18 @@ const displayHowToPlay = () => {
   htpWrapperElement.classList.remove('hiddenHtp');
 }
 
-howToPlayButtonElement.addEventListener('touchstart', displayHowToPlay);
+howToPlayButtonElement.addEventListener('touchend', displayHowToPlay);
 
 const hideHowToPlay = () => {
 
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
   setTimeout(() => {
-    htpWrapperElement.classList.add('hidden');
+    htpWrapperElement.classList.add('htpHidden');
   }, 500);
 }
 
-closeHtpButtonElement.addEventListener('touchstart', hideHowToPlay);
+closeHtpButtonElement.addEventListener('touchend', hideHowToPlay);
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
