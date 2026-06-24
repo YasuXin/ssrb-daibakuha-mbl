@@ -365,6 +365,11 @@ for (let i = 1; i <= 3; i++) {
 
 // ゲームを始める
 const startGame = () => {
+
+  document.documentElement.requestFullscreen().catch((err) => {
+    console.error(`全画面表示に失敗しました: ${err.message}`);
+  });
+
   while (document.querySelector('.bgm') !== null) {
     document.querySelector('.bgm').pause();
     document.querySelector('.bgm').remove();
@@ -473,6 +478,10 @@ const hideHowToPlay = () => {
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
+
+  document.exitFullscreen().catch((err) => {
+    console.error(`全画面表示の終了に失敗しました: ${err.message}`);
+  }
 
   // ターゲットカーソルを削除する
   while (true) {
