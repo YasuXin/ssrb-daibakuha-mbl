@@ -366,10 +366,6 @@ for (let i = 1; i <= 3; i++) {
 // ゲームを始める
 const startGame = () => {
 
-  document.documentElement.requestFullscreen().catch((err) => {
-    console.error(`全画面表示に失敗しました: ${err.message}`);
-  });
-
   while (document.querySelector('.bgm') !== null) {
     document.querySelector('.bgm').pause();
     document.querySelector('.bgm').remove();
@@ -443,6 +439,8 @@ const startGame = () => {
   }, 3200)
 }
 
+startButtonElement.addEventListener('touchstart', startGame);
+
 // SSRBをリロードする
 const reloadGame = () => {
   for (let i = 0; i < engine.world.bodies.length; i++) {
@@ -467,6 +465,8 @@ const displayHowToPlay = () => {
   htpWrapperElement.classList.remove('hiddenHtp');
 }
 
+howToPlayButtonElement.addEventListener('touchstart', displayHowToPlay);
+
 const hideHowToPlay = () => {
 
   htpWrapperElement.classList.remove('visibleHtp');
@@ -476,12 +476,10 @@ const hideHowToPlay = () => {
   }, 500);
 }
 
+howToPlayButtonElement.addEventListener('touchstart', hideHowToPlay);
+
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
-
-  document.exitFullscreen().catch((err) => {
-    console.error(`全画面表示の終了に失敗しました: ${err.message}`);
-  })
 
   // ターゲットカーソルを削除する
   while (true) {
