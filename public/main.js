@@ -60,6 +60,7 @@ const countDownElement = document.getElementById("countDown");
 const titleContainerElement = document.getElementById("titleContainer");
 const startButtonElement = document.getElementById("startButton");
 const howToPlayButtonElement = document.getElementById("howToPlayButton");
+const closeHtpButtonElement = document.getElementById("closeHtpButton");
 const reloadButtonElement = document.getElementById("reloadButton");
 const resultContainerElement = document.getElementById("resultContainer");
 const htpWrapperElement = document.getElementById("htpWrapper");
@@ -476,7 +477,7 @@ const hideHowToPlay = () => {
   }, 500);
 }
 
-howToPlayButtonElement.addEventListener('touchstart', hideHowToPlay);
+closeHtpButtonElement.addEventListener('touchstart', hideHowToPlay);
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
