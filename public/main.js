@@ -464,20 +464,21 @@ const displayHowToPlay = () => {
   htpWrapperElement.classList.add('visibleHtp');
   htpWrapperElement.classList.remove('htpHidden');
   htpWrapperElement.classList.remove('hiddenHtp');
+  htpWrapperElement.classList.remove('hidden');
 }
 
-howToPlayButtonElement.addEventListener('click', displayHowToPlay);
+howToPlayButtonElement.addEventListener('touchstart', displayHowToPlay);
 
 const hideHowToPlay = () => {
 
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
   setTimeout(() => {
-    htpWrapperElement.classList.add('hidden');
+    htpWrapperElement.classList.add('htpHidden');
   }, 500);
 }
 
-closeHtpButtonElement.addEventListener('click', hideHowToPlay);
+closeHtpButtonElement.addEventListener('touchstart', hideHowToPlay);
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {

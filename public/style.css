@@ -403,7 +403,7 @@ main {
 
 .htpHidden {
   /* howToPlayウィンドウの初期設定 */
-  display: none;
+  display: none !important;
 }
 
 .htpContainer {
