@@ -837,14 +837,15 @@ document.addEventListener("touchend", function(events) {
             let poX = Math.round(engine.world.bodies[i].position.x);
             let poY = Math.round(engine.world.bodies[i].position.y);
             let rad = Math.round(engine.world.bodies[i].circleRadius);
+
             let explosion = document.createElement("img");
             explosion.src = explosionGifPath;
-            explosion.width = rad * 2.5;
+            explosion.width = rad * 4;
             explosion.id = "explosion" + allDeletedSsrbs;
             explosion.style.position = "absolute";
 
-            explosion.style.left = poX + rad / 2 - rad * 2.5 / 1.5 + "px";
-            explosion.style.top = poY + rad / 2 - rad * 2.5 / 1.5 + "px";
+            explosion.style.left = poX + rad / 2 - rad * 4 / 1.5 + "px";
+            explosion.style.top = poY + rad / 2 - rad * 4 / 1.5 + "px";
 
             explosionsElement.appendChild(explosion)
 
