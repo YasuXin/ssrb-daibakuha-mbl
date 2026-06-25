@@ -130,6 +130,12 @@ main {
   padding: 2px 0;
 }
 
+
+#musicOffButton {
+  background-color: rgb(120, 120, 120);
+  border: 2px solid rgb(150,150,150);
+}
+
 /* result container */
 #resultContainer {
   position: absolute;
