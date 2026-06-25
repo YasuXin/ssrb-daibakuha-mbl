@@ -840,12 +840,12 @@ document.addEventListener("touchend", function(events) {
 
             let explosion = document.createElement("img");
             explosion.src = explosionGifPath;
-            explosion.width = rad * 4;
+            explosion.width = rad * 3;
             explosion.id = "explosion" + allDeletedSsrbs;
             explosion.style.position = "absolute";
 
-            explosion.style.left = poX + rad / 2 - rad * 4 / 1.5 + "px";
-            explosion.style.top = poY + rad / 2 - rad * 4 / 1.5 + "px";
+            explosion.style.left = poX + rad / 2 - rad * 3 / 1.5 + "px";
+            explosion.style.top = poY + rad / 2 - rad * 3 / 1.5 + "px";
 
             explosionsElement.appendChild(explosion)
 
