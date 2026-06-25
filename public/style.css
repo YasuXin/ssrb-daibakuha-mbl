@@ -52,12 +52,13 @@ body {
 main {
   width: var(--canvas-width);
   height: var(--canvas-height);
+  position: relative;
 }
 
 /* title box */
 #titleContainer {
   position: absolute;
-  top: var(--container-top);
+  top: 0;
   left: var(--container-left);
 }
 
@@ -121,17 +122,12 @@ main {
 }
 
 .music-btn {
-  width: 40px;
+  width: 60px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgb(220,120,120);
   border: 2px solid rgb(240,180,180);
   padding: 2px 0;
-}
-
-#musicOffButton {
-  background-color: rgb(120, 120, 120);
-  border: 2px solid rgb(150,150,150);
 }
 
 /* result container */
@@ -152,7 +148,7 @@ main {
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  height: var(--canvas-height);
+  height: calc(var(--canvas-height) + 10px);
   border-radius: 10px;
   background-color: rgba(250,255,255,0.9);
   padding: 0;
@@ -160,7 +156,7 @@ main {
 
 @keyframes resultBoxSlide {
   0% {top: -100vh}
-  100% {top: 50px}
+  100% {top: 0}
 }
 
 #resultBox #table {
@@ -342,7 +338,7 @@ main {
   left: 0;
   top: 0;
   width: 100vw;
-  height: calc(100vh - 110px);
+  height: var(--canvas-height);
 }
 
 .anime_text {
@@ -398,12 +394,12 @@ main {
   position: absolute;
   top: 0;
   width: 100vw;
-  height: var(--main-container-height);
+  height: calc(var(--main-container-height) - 70px);
 }
 
 .htpHidden {
   /* howToPlayウィンドウの初期設定 */
-  display: none !important;
+  display: none;
 }
 
 .htpContainer {
@@ -433,7 +429,7 @@ main {
   margin-top: 10px;
 }
 
-.htpTitle h3 {
+.htpTitle h2 {
   width: calc(100% - 80px);
   margin: 0;
   padding: 5px 10px;
@@ -481,7 +477,7 @@ main {
 
 .htpContent {
   width: 100%;
-  height: var(--canvas-height);
+  height: calc(100vh - 120px);
 }
 
 .htpChainTableWrapper {

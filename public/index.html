@@ -37,59 +37,60 @@
 
     <main>
       <div id="canvas"></div>
+      <div id="explosions" class="hidden"></div>
+
+      <div id="titleContainer">
+        <div id="titleText" class="dela">
+          <div id="titleSSRB">SSRB</div>
+          <div id="titleDaibakuha">大爆破</div>
+          <div id="titleUnderText">硬い岩盤にぶち当たったからおまえら自爆しろｗ</div>
+          <div style="font-size: 7vw;">Mobile版</div>
+          <div id="images"></div>
+        </div>
+      </div>
+
+      <div id="resultContainer" class="knewave hidden">
+        <div id="resultBox">
+          <h1>RESULT</h1>
+          <div id="table">
+            <div class="table-left">一度に獲得した最大得点：</div>
+            <div id="bestScore" class="table-right">0</div>
+            <div class="inner-table">
+              <div class="table-left">最終スコア：　</div>
+              <div id="lastScore" class="table-right">0</div>
+            </div>
+            <div class="inner-table">
+              <div class="table-left">最大連鎖数：　</div>
+              <div id="bestChain" class="table-right">0</div>
+            </div>
+            <div class="inner-table">
+              <div class="table-left">爆破数：　</div>
+              <div id="allDeleted" class="table-right">0</div>
+            </div>
+          </div>
+
+          <div>総合評価 : <span id="evaluate"></span></div>
+
+          <div id="evaluateCommentContainer">
+            <div id="evaluateCommentBox">
+              <div id="evaluateComment">まだまだだな！おまえらの成長に期待するかｗｗｗｗ</div>
+            </div>
+            <div id="resultSsrbtn"><img src="images/ssrbtn0.png" width="120" alt=""></div>
+          </div>
+
+        </div>
+      </div>
+
     </main>
 
-    <div id="titleContainer">
-      <div id="titleText" class="dela">
-        <div id="titleSSRB">SSRB</div>
-        <div id="titleDaibakuha">大爆破</div>
-        <div id="titleUnderText">硬い岩盤にぶち当たったからおまえら自爆しろｗ</div>
-        <div style="font-size: 7vw;">Mobile版</div>
-        <div id="images"></div>
-      </div>
-    </div>
-
     <div id="startContainer">
-      <button id="startButton" class="button">START!</button>
-      <button id="howToPlayButton" class="button">遊び方</button>
+      <button id="startButton" onclick="startGame()" class="button">START!</button>
+      <button id="howToPlayButton" onclick="displayHowToPlay()" class="button">遊び方</button>
       <button id="reloadButton" class="button hidden">RELOAD!</button>
       <button id="musicOffButton" onclick="switchOnMusic()" class="button music-btn"><img src="images/speaker_off.png" alt="OFF" width="32"></button>
       <button id="musicOnButton" onclick="switchOffMusic()" class="button music-btn hidden"><img src="images/speaker_on.png" alt="ON" width="32"></button>
     </div>
 
-    <div id="resultContainer" class="knewave hidden">
-      <div id="resultBox">
-        <h1>RESULT</h1>
-        <div id="table">
-          <div class="table-left">一度に獲得した最大得点：</div>
-          <div id="bestScore" class="table-right">0</div>
-          <div class="inner-table">
-            <div class="table-left">最終スコア：　</div>
-            <div id="lastScore" class="table-right">0</div>
-          </div>
-          <div class="inner-table">
-            <div class="table-left">最大連鎖数：　</div>
-            <div id="bestChain" class="table-right">0</div>
-          </div>
-          <div class="inner-table">
-            <div class="table-left">爆破数：　</div>
-            <div id="allDeleted" class="table-right">0</div>
-          </div>
-        </div>
-
-        <div>総合評価 : <span id="evaluate"></span></div>
-
-        <div id="evaluateCommentContainer">
-          <div id="evaluateCommentBox">
-            <div id="evaluateComment">まだまだだな！おまえらの成長に期待するかｗｗｗｗ</div>
-          </div>
-          <div id="resultSsrbtn"><img src="images/ssrbtn0.png" width="120" alt="SSRBTN"></div>
-        </div>
-
-      </div>
-    </div>
-
-    <div id="explosions" class="hidden"></div>
 
     <div id="countDown" class="hidden">
       <div>3</div>
@@ -101,14 +102,14 @@
 
     <div id="htpPage1" class="htpContainer visibleHtpContent">
       <div class="htpTitle">
-        <h3>説明</h3>
-        <button id="closeHtpButton" class="button">×</button>
+        <h2>説明</h2>
+        <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
-        <img src="images/setsumei.png" alt="ししろんの命令" style="float: right; margin: 10px; width: 70%;">
+        <img src="images/setsumei.png" alt="ししろんの命令" style="float: right; margin: 20px; width: 90%;">
         <p>今日も楽しく元気に地下労働に励むSSRBたち。</p>
         <p>しかし掘削を進めていると、つるはしでは掘れない硬い岩盤に当たってしまいました。</p>
-        <p style="font-size: 1.4em;">「よし、おまえら自爆しろwww」</p>
+        <p style="font-size: 1.5em;">「よし、おまえら自爆しろwww」</p>
         <p>孔にSSRBを押し込んで爆破することになりました。１体では威力が足りないため、大量のSSRBを同時爆破しましょう！</p>
         <p style="font-size: 0.7em;">「安全性？まあ、ダイジョーブだろｗｗｗｗｗｗなんとかなるだろｗｗｗｗｗｗ」</p>
       </div>
@@ -122,11 +123,11 @@
 
     <div id="htpPage2" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方①</h3>
+        <h2>遊び方①</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
-        <img src="images/screen.png" alt="画面" style="width: 80%; margin-top: 10px;">
+        <img src="images/screen.png" alt="画面" style="width: 100%; margin-top: 20px;">
         <p>画面右側のSTART!ボタンを押すとゲームが開始します。</p>
         <p>ゲームが開始されたら、画面左側に50体のSSRBが出現します。SSRBを左クリックすると、クリックしたSSRBをターゲットに指定します。
           そのまま隣接する同じ色のSSRBにドラッグすると、その個体もターゲットに指定され、連鎖状態となります。</p>
@@ -146,17 +147,17 @@
 
     <div id="htpPage3" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方②</h3>
+        <h2>遊び方②</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
         <h3>画面上の説明</h3>
-        <img src="images/header.png" alt="画面上側" style="margin: 0 10px; width: 80%;">
+        <img src="images/header.png" alt="画面上側" style="margin:10px; width: 90%;">
         <p>Timerには残り時間が表示されます。ゲームの制限時間は120秒で、条件によって残り時間が上下します。</p>
         <p>Scoreにはゲーム開始から獲得した得点の合計が表示されます。</p>
 
         <h3>プレイ中の画面下の説明</h3>
-        <img src="images/footer.png" alt="画面下側" style="margin: 0 10px; width: 80%;">
+        <img src="images/footer.png" alt="画面下側" style="margin:10px; width: 90%;">
         <p>ゲームを開始すると、START!ボタンが配置されていた場所にRELOAD!ボタンが出現します。
           RELOAD!ボタンを押すと場にいるSSRBをすべて削除し、50体のSSRBを再び生成します。SSRBの配置がよくないときに押してください。
           ただし、<span style="color:red;">RELOAD!ボタンは一度押すにつき5秒残り時間が減ります。</span>
@@ -173,7 +174,7 @@
 
     <div id="htpPage4" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方③</h3>
+        <h2>遊び方③</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
@@ -203,7 +204,7 @@
 
     <div id="htpPage5" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方④</h3>
+        <h2>遊び方④</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
@@ -228,7 +229,7 @@
 
     <div id="htpPage6" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方⑤</h3>
+        <h2>遊び方⑤</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
@@ -246,7 +247,7 @@
 
     <div id="htpPage7" class="htpContainer">
       <div class="htpTitle">
-        <h3>遊び方⑥</h3>
+        <h2>遊び方⑥</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">
@@ -265,7 +266,7 @@
 
     <div id="htpPage8" class="htpContainer">
       <div class="htpTitle">
-        <h3>参考</h3>
+        <h2>参考</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent htpTableWrapper">
@@ -400,7 +401,7 @@
 
     <div id="htpPage9" class="htpContainer">
       <div class="htpTitle">
-        <h3>参考</h3>
+        <h2>参考</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent htpTableWrapper">
@@ -461,7 +462,7 @@
 
     <div id="htpPage10" class="htpContainer">
       <div class="htpTitle">
-        <h3>SPECIAL THANKS</h3>
+        <h2>SPECIAL THANKS</h2>
         <button id="closeHtpButton" onclick="hideHowToPlay()" class="button">×</button>
       </div>
       <div class="htpContent">

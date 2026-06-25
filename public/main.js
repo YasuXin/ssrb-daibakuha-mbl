@@ -13,12 +13,12 @@ let engine = Engine.create();
 /* 定数と変数の定義 */
 // 定数
 const width = screen.width;
-const height = window.innerHeight - 105;
+const height = window.innerHeight - 180;
 const lineWidth = 20;
 //const fieldCount = 3;
-const ballCount = 50;
-const ballRad = screen.width / 12;
-const skeltonRad = screen.width / 14;
+const ballCount = 60;
+const ballRad = screen.width / 14;
+const skeltonRad = screen.width / 16;
 const goldenRad = screen.width / 8;
 const explosionTime = 400
 const explosionCount = 2;
@@ -60,7 +60,6 @@ const countDownElement = document.getElementById("countDown");
 const titleContainerElement = document.getElementById("titleContainer");
 const startButtonElement = document.getElementById("startButton");
 const howToPlayButtonElement = document.getElementById("howToPlayButton");
-const closeHtpButtonElement = document.getElementById("closeHtpButton");
 const reloadButtonElement = document.getElementById("reloadButton");
 const resultContainerElement = document.getElementById("resultContainer");
 const htpWrapperElement = document.getElementById("htpWrapper");
@@ -366,7 +365,6 @@ for (let i = 1; i <= 3; i++) {
 
 // ゲームを始める
 const startGame = () => {
-
   while (document.querySelector('.bgm') !== null) {
     document.querySelector('.bgm').pause();
     document.querySelector('.bgm').remove();
@@ -440,8 +438,6 @@ const startGame = () => {
   }, 3200)
 }
 
-startButtonElement.addEventListener('touchstart', startGame);
-
 // SSRBをリロードする
 const reloadGame = () => {
   for (let i = 0; i < engine.world.bodies.length; i++) {
@@ -460,25 +456,20 @@ const reloadGame = () => {
 reloadButtonElement.addEventListener("touchstart", reloadGame);
 
 const displayHowToPlay = () => {
- 
+
   htpWrapperElement.classList.add('visibleHtp');
   htpWrapperElement.classList.remove('htpHidden');
   htpWrapperElement.classList.remove('hiddenHtp');
-  htpWrapperElement.classList.remove('hidden');
 }
-
-howToPlayButtonElement.addEventListener('touchstart', displayHowToPlay);
 
 const hideHowToPlay = () => {
 
   htpWrapperElement.classList.remove('visibleHtp');
   htpWrapperElement.classList.add('hiddenHtp');
   setTimeout(() => {
-    htpWrapperElement.classList.add('htpHidden');
+    htpWrapperElement.classList.add('hidden');
   }, 500);
 }
-
-closeHtpButtonElement.addEventListener('touchstart', hideHowToPlay);
 
 //ゲームを停止する　本番では削除する
 const stopGame = () => {
@@ -851,8 +842,10 @@ document.addEventListener("touchend", function(events) {
             explosion.width = rad * 2.5;
             explosion.id = "explosion" + allDeletedSsrbs;
             explosion.style.position = "absolute";
-            explosion.style.left = poX - ( rad * 1.2 ) + "px";
-            explosion.style.top = poY + ( rad / 3 ) + "px";
+
+            explosion.style.left = poX - rad * 1.2 + "px";
+            explosion.style.top = poY - rad  * 1.2 + "px";
+
             explosionsElement.appendChild(explosion)
 
             setTimeout(function () {
