@@ -298,7 +298,7 @@ const init = () => {
   for (let i = 0; i < ballCount; i++) {
     let randX = Math.floor(Math.random() * (width - 80)) + 40;
     let randY = Math.floor(Math.random() * (height - 120)) - 380;
-    let rad = Math.floor(Math.random() * 5) + ballRad;
+    let rad = ballRad;
 
     let skeltonAppearRate = Math.ceil(Math.random() * 20);
     let goldenBallAppearRate = Math.ceil(Math.random() * 50);
@@ -843,8 +843,8 @@ document.addEventListener("touchend", function(events) {
             explosion.id = "explosion" + allDeletedSsrbs;
             explosion.style.position = "absolute";
 
-            explosion.style.left = poX - rad * 1.2 + "px";
-            explosion.style.top = poY - rad  * 1.2 + "px";
+            explosion.style.left = poX + rad / 2 - rad * 2.5 / 1.5 + "px";
+            explosion.style.top = poY + rad / 2 - rad * 2.5 / 1.5 + "px";
 
             explosionsElement.appendChild(explosion)
 
